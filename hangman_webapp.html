@@ -1,0 +1,1153 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="hangman_style.css">
+</head>
+
+<body>
+<h4><b>Enter the word</b></h4><input type="password" id="word" class="check"></input><br><br>
+<button onclick="document.getElementById('change').style.display='block' "><b>SAVE WORD</b></button>
+<button type="submit" id="start" onclick="wordshow()" style="margin-left : 100px ; border-radius : 4px;">START GAME</button>
+
+<img id="hang" src="hang0.jpg">
+<br>
+<p  id="change" style="display :none"><button type="submit" id="a" onclick="funa()" class="alpha" >A</button> <button type="submit" id="b" onclick="funb()" class="alpha" >B</button> <button type="submit" id="c" onclick="func()" class="alpha" >C</button> <button type="submit" id="d" onclick="fund()" class="alpha" >D</button> <button type="submit" id="e" onclick="fune()" class="alpha" >E</button><br>
+<button type="submit" id="f" onclick="funf()" class="alpha" >F</button> <button type="submit" id="g" onclick="fung()" class="alpha" >G</button> <button type="submit" id="h" onclick="funh()" class="alpha" >H</button> <button type="submit" id="i" onclick="funi()" class="alpha" >I</button> <button type="submit" id="j" onclick="funj()" class="alpha" >J</button><br>
+<button type="submit" id="k" onclick="funk()" class="alpha" >K</button> <button type="submit" id="l" onclick="funl()" class="alpha" >L</button> <button type="submit" id="m" onclick="funm()" class="alpha" >M</button> <button type="submit" id="n" onclick="funn()" class="alpha" >N</button> <button type="submit" id="o" onclick="funo()" class="alpha" >O</button><br>
+<button type="submit" id="p" onclick="funp()" class="alpha" >P</button> <button type="submit" id="q" onclick="funq()" class="alpha" >Q</button> <button type="submit" id="r" onclick="funr()" class="alpha" >R</button> <button type="submit" id="s" onclick="funs()" class="alpha" >S</button> <button type="submit" id="t" onclick="funt()" class="alpha" >T</button><br>
+<button type="submit" id="u" onclick="funu()" class="alpha" >U</button> <button type="submit" id="v" onclick="funv()" class="alpha" >V</button> <button type="submit" id="w" onclick="funw()" class="alpha" >W</button> <br>
+<button type="submit" id="x" onclick="funx()" class="alpha" >X</button> <button type="submit" id="y" onclick="funy()" class="alpha" >Y</button> <button type="submit" id="z" onclick="funz()" class="alpha" >Z</button></p>
+
+<div id="find" class="start"></div>
+<div id="end" class="inst">INSTRUCTION:<br><font color="white"><h5>Enter the word to be found by the player<br>Save the word and click START GAME</h5></font></div>
+<script>
+    var temp;
+	var word="";
+	count=0;
+function wordshow(){
+    var save = document.getElementById("word").value;
+	var len=save.length;
+	for(i=0;i<len;i++){
+		word=word.concat("*");
+	}
+	temp=word;
+    document.getElementById("find").innerHTML = word;
+	document.getElementById("start").disabled = true;
+}
+
+function funa(){
+	var save = document.getElementById("word").value;
+	var len=save.length;
+	var i,apps=0;
+	word="";
+	for(i=0;i<len;i++){	
+		if(save[i]=="a"){
+			word=word.concat("a");
+			apps++;
+		}
+		else{
+			word=word.concat(temp[i]);
+		}
+	}	
+	temp=word;
+	if(apps==0){
+		count++;
+	}
+	if(count==1){
+		document.getElementById("hang").src="hang1.jpg";
+	}
+	else if(count==2){
+		document.getElementById("hang").src="hang2.jpg";
+	}
+	else if(count==3){
+		document.getElementById("hang").src="hang3.jpg";
+	}
+	else if(count==4){
+		document.getElementById("hang").src="hang4.jpg";
+	}
+	else if(count==5){
+		document.getElementById("hang").src="hang5.jpg";
+	}
+	else if(count==6){
+		document.getElementById("hang").src="hang6.jpg";
+	}
+	else if(count==7){
+		document.getElementById("hang").src="hang7.jpg";
+	}
+	document.getElementById("find").innerHTML =temp;
+	document.getElementById("a").disabled = true;	
+}
+function funb(){
+	var save = document.getElementById("word").value;
+	var len=save.length;
+	var i,apps=0;
+	word="";
+	for(i=0;i<len;i++){	
+		if(save[i]=="b"){
+			word=word.concat("b");
+			apps++;
+		}
+		else{
+			word=word.concat(temp[i]);
+		}
+	}	
+	if(apps==0){
+		count++;
+	}
+	if(count==1){
+		document.getElementById("hang").src="hang1.jpg";
+	}
+	else if(count==2){
+		document.getElementById("hang").src="hang2.jpg";
+	}
+	else if(count==3){
+		document.getElementById("hang").src="hang3.jpg";
+	}
+	else if(count==4){
+		document.getElementById("hang").src="hang4.jpg";
+	}
+	else if(count==5){
+		document.getElementById("hang").src="hang5.jpg";
+	}
+	else if(count==6){
+		document.getElementById("hang").src="hang6.jpg";
+	}
+	else if(count==7){
+		document.getElementById("hang").src="hang7.jpg";
+	}
+	temp=word;
+	document.getElementById("find").innerHTML =temp;
+	document.getElementById("b").disabled = true;	
+}
+function func(){
+	var save = document.getElementById("word").value;
+	var len=save.length;
+	var i,apps=0;
+	word="";
+	for(i=0;i<len;i++){	
+		if(save[i]=="c"){
+			word=word.concat("c");
+			apps++;
+		}
+		else{
+			word=word.concat(temp[i]);
+		}
+	}
+	temp=word;	
+	if(apps==0){
+		count++;
+	}
+	if(count==1){
+		document.getElementById("hang").src="hang1.jpg";
+	}
+	else if(count==2){
+		document.getElementById("hang").src="hang2.jpg";
+	}
+	else if(count==3){
+		document.getElementById("hang").src="hang3.jpg";
+	}
+	else if(count==4){
+		document.getElementById("hang").src="hang4.jpg";
+	}
+	else if(count==5){
+		document.getElementById("hang").src="hang5.jpg";
+	}
+	else if(count==6){
+		document.getElementById("hang").src="hang6.jpg";
+	}
+	else if(count==7){
+		document.getElementById("hang").src="hang7.jpg";
+	}
+	document.getElementById("find").innerHTML =word;
+	document.getElementById("c").disabled = true;	
+}
+function fund(){
+	var save = document.getElementById("word").value;
+	var len=save.length;
+	var i,apps=0;
+	
+	word="";
+	for(i=0;i<len;i++){	
+		if(save[i]=="d"){
+			word=word.concat("d");
+			apps++;
+		}
+		else{
+			word=word.concat(temp[i]);
+		}
+	}
+	temp=word;
+	if(apps==0){
+		count++;
+	}
+	if(count==1){
+		document.getElementById("hang").src="hang1.jpg";
+	}
+	else if(count==2){
+		document.getElementById("hang").src="hang2.jpg";
+	}
+	else if(count==3){
+		document.getElementById("hang").src="hang3.jpg";
+	}
+	else if(count==4){
+		document.getElementById("hang").src="hang4.jpg";
+	}
+	else if(count==5){
+		document.getElementById("hang").src="hang5.jpg";
+	}
+	else if(count==6){
+		document.getElementById("hang").src="hang6.jpg";
+	}
+	else if(count==7){
+		document.getElementById("hang").src="hang7.jpg";
+	}
+	document.getElementById("find").innerHTML =word;
+	document.getElementById("d").disabled = true;	
+}
+function fune(){
+	var save = document.getElementById("word").value;
+	var len=save.length;
+	var i,apps=0;
+	word="";
+	for(i=0;i<len;i++){	
+		if(save[i]=="e"){
+			word=word.concat("e");
+			apps++;
+		}
+		else{
+			word=word.concat(temp[i]);
+		}
+	}	
+	temp=word;
+	if(apps==0){
+		count++;
+	}
+	if(count==1){
+		document.getElementById("hang").src="hang1.jpg";
+	}
+	else if(count==2){
+		document.getElementById("hang").src="hang2.jpg";
+	}
+	else if(count==3){
+		document.getElementById("hang").src="hang3.jpg";
+	}
+	else if(count==4){
+		document.getElementById("hang").src="hang4.jpg";
+	}
+	else if(count==5){
+		document.getElementById("hang").src="hang5.jpg";
+	}
+	else if(count==6){
+		document.getElementById("hang").src="hang6.jpg";
+	}
+	else if(count==7){
+		document.getElementById("hang").src="hang7.jpg";
+	}
+	document.getElementById("find").innerHTML =word;
+	document.getElementById("e").disabled = true;	
+}
+function funf(){
+	var save = document.getElementById("word").value;
+	var len=save.length;
+	var i,apps=0;
+	
+	word="";
+	for(i=0;i<len;i++){	
+		if(save[i]=="f"){
+			word=word.concat("f");
+			apps++;
+		}
+		else{
+			word=word.concat(temp[i]);
+		}
+	}	
+	temp=word;
+	if(apps==0){
+		count++;
+	}
+	if(count==1){
+		document.getElementById("hang").src="hang1.jpg";
+	}
+	else if(count==2){
+		document.getElementById("hang").src="hang2.jpg";
+	}
+	else if(count==3){
+		document.getElementById("hang").src="hang3.jpg";
+	}
+	else if(count==4){
+		document.getElementById("hang").src="hang4.jpg";
+	}
+	else if(count==5){
+		document.getElementById("hang").src="hang5.jpg";
+	}
+	else if(count==6){
+		document.getElementById("hang").src="hang6.jpg";
+	}
+	else if(count==7){
+		document.getElementById("hang").src="hang7.jpg";
+	}
+	document.getElementById("find").innerHTML =word;
+	document.getElementById("f").disabled = true;	
+}
+function fung(){
+	var save = document.getElementById("word").value;
+	var len=save.length;
+	var i,apps=0;
+	word="";
+	for(i=0;i<len;i++){	
+		if(save[i]=="g"){
+			word=word.concat("g");
+			apps++;
+		}
+		else{
+			word=word.concat(temp[i]);
+		}
+	}	
+	temp=word;
+	if(apps==0){
+		count++;
+	}
+	if(count==1){
+		document.getElementById("hang").src="hang1.jpg";
+	}
+	else if(count==2){
+		document.getElementById("hang").src="hang2.jpg";
+	}
+	else if(count==3){
+		document.getElementById("hang").src="hang3.jpg";
+	}
+	else if(count==4){
+		document.getElementById("hang").src="hang4.jpg";
+	}
+	else if(count==5){
+		document.getElementById("hang").src="hang5.jpg";
+	}
+	else if(count==6){
+		document.getElementById("hang").src="hang6.jpg";
+	}
+	else if(count==7){
+		document.getElementById("hang").src="hang7.jpg";
+	}
+	document.getElementById("find").innerHTML =word;
+	document.getElementById("g").disabled = true;	
+}
+function funh(){
+	var save = document.getElementById("word").value;
+	var len=save.length;
+	var i,apps=0;
+	
+	word="";
+	for(i=0;i<len;i++){	
+		if(save[i]=="h"){
+			word=word.concat("h");
+			apps++;
+		}
+		else{
+			word=word.concat(temp[i]);
+		}
+	}	
+	temp=word;
+	if(apps==0){
+		count++;
+	}
+	if(count==1){
+		document.getElementById("hang").src="hang1.jpg";
+	}
+	else if(count==2){
+		document.getElementById("hang").src="hang2.jpg";
+	}
+	else if(count==3){
+		document.getElementById("hang").src="hang3.jpg";
+	}
+	else if(count==4){
+		document.getElementById("hang").src="hang4.jpg";
+	}
+	else if(count==5){
+		document.getElementById("hang").src="hang5.jpg";
+	}
+	else if(count==6){
+		document.getElementById("hang").src="hang6.jpg";
+	}
+	else if(count==7){
+		document.getElementById("hang").src="hang7.jpg";
+	}
+	document.getElementById("find").innerHTML =word;
+	document.getElementById("h").disabled = true;	
+}
+function funi(){
+	var save = document.getElementById("word").value;
+	var len=save.length;
+	var i,apps=0;
+	
+	word="";
+	for(i=0;i<len;i++){	
+		if(save[i]=="i"){
+			word=word.concat("i");
+			apps++;
+		}
+		else{
+			word=word.concat(temp[i]);
+		}
+	}	
+	temp=word;
+	if(apps==0){
+		count++;
+	}
+	if(count==1){
+		document.getElementById("hang").src="hang1.jpg";
+	}
+	else if(count==2){
+		document.getElementById("hang").src="hang2.jpg";
+	}
+	else if(count==3){
+		document.getElementById("hang").src="hang3.jpg";
+	}
+	else if(count==4){
+		document.getElementById("hang").src="hang4.jpg";
+	}
+	else if(count==5){
+		document.getElementById("hang").src="hang5.jpg";
+	}
+	else if(count==6){
+		document.getElementById("hang").src="hang6.jpg";
+	}
+	else if(count==7){
+		document.getElementById("hang").src="hang7.jpg";
+	}
+	document.getElementById("find").innerHTML =word;
+	document.getElementById("i").disabled = true;	
+}
+function funj(){
+	var save = document.getElementById("word").value;
+	var len=save.length;
+	var i,apps=0;
+	
+	word="";
+	for(i=0;i<len;i++){	
+		if(save[i]=="j"){
+			word=word.concat("j");
+			apps++;
+		}
+		else{
+			word=word.concat(temp[i]);
+		}
+	}	
+	temp=word;
+	if(apps==0){
+		count++;
+	}
+	if(count==1){
+		document.getElementById("hang").src="hang1.jpg";
+	}
+	else if(count==2){
+		document.getElementById("hang").src="hang2.jpg";
+	}
+	else if(count==3){
+		document.getElementById("hang").src="hang3.jpg";
+	}
+	else if(count==4){
+		document.getElementById("hang").src="hang4.jpg";
+	}
+	else if(count==5){
+		document.getElementById("hang").src="hang5.jpg";
+	}
+	else if(count==6){
+		document.getElementById("hang").src="hang6.jpg";
+	}
+	else if(count==7){
+		document.getElementById("hang").src="hang7.jpg";
+	}
+	document.getElementById("find").innerHTML =word;
+	document.getElementById("j").disabled = true;	
+}
+function funk(){
+	var save = document.getElementById("word").value;
+	var len=save.length;
+	var i,apps=0;
+	
+	word="";
+	for(i=0;i<len;i++){	
+		if(save[i]=="k"){
+			word=word.concat("k");
+			apps++;
+		}
+		else{
+			word=word.concat(temp[i]);
+		}
+	}	
+	temp=word;
+	if(apps==0){
+		count++;
+	}
+	if(count==1){
+		document.getElementById("hang").src="hang1.jpg";
+	}
+	else if(count==2){
+		document.getElementById("hang").src="hang2.jpg";
+	}
+	else if(count==3){
+		document.getElementById("hang").src="hang3.jpg";
+	}
+	else if(count==4){
+		document.getElementById("hang").src="hang4.jpg";
+	}
+	else if(count==5){
+		document.getElementById("hang").src="hang5.jpg";
+	}
+	else if(count==6){
+		document.getElementById("hang").src="hang6.jpg";
+	}
+	else if(count==7){
+		document.getElementById("hang").src="hang7.jpg";
+	}
+	document.getElementById("find").innerHTML =word;
+	document.getElementById("k").disabled = true;	
+}
+function funl(){
+	var save = document.getElementById("word").value;
+	var len=save.length;
+	var i,apps=0;
+	
+	word="";
+	for(i=0;i<len;i++){	
+		if(save[i]=="l"){
+			word=word.concat("l");
+			apps++;
+		}
+		else{
+			word=word.concat(temp[i]);
+		}
+	}	
+	temp=word;
+	if(apps==0){
+		count++;
+	}
+	if(count==1){
+		document.getElementById("hang").src="hang1.jpg";
+	}
+	else if(count==2){
+		document.getElementById("hang").src="hang2.jpg";
+	}
+	else if(count==3){
+		document.getElementById("hang").src="hang3.jpg";
+	}
+	else if(count==4){
+		document.getElementById("hang").src="hang4.jpg";
+	}
+	else if(count==5){
+		document.getElementById("hang").src="hang5.jpg";
+	}
+	else if(count==6){
+		document.getElementById("hang").src="hang6.jpg";
+	}
+	else if(count==7){
+		document.getElementById("hang").src="hang7.jpg";
+	}
+	document.getElementById("find").innerHTML =word;
+	document.getElementById("l").disabled = true;	
+}
+function funm(){
+	var save = document.getElementById("word").value;
+	var len=save.length;
+	var i,apps=0;
+	
+	word="";
+	for(i=0;i<len;i++){	
+		if(save[i]=="m"){
+			word=word.concat("m");
+			apps++;
+		}
+		else{
+			word=word.concat(temp[i]);
+	}	
+	}
+	temp=word;
+	if(apps==0){
+		count++;
+	}
+	if(count==1){
+		document.getElementById("hang").src="hang1.jpg";
+	}
+	else if(count==2){
+		document.getElementById("hang").src="hang2.jpg";
+	}
+	else if(count==3){
+		document.getElementById("hang").src="hang3.jpg";
+	}
+	else if(count==4){
+		document.getElementById("hang").src="hang4.jpg";
+	}
+	else if(count==5){
+		document.getElementById("hang").src="hang5.jpg";
+	}
+	else if(count==6){
+		document.getElementById("hang").src="hang6.jpg";
+	}
+	else if(count==7){
+		document.getElementById("hang").src="hang7.jpg";
+	}
+	document.getElementById("find").innerHTML =word;
+	document.getElementById("m").disabled = true;	
+}
+function funn(){
+	var save = document.getElementById("word").value;
+	var len=save.length;
+	var i,apps=0;
+	
+	word="";
+	for(i=0;i<len;i++){	
+		if(save[i]=="n"){
+			word=word.concat("n");
+			apps++;
+		}
+		else{
+			word=word.concat(temp[i]);
+		}
+	}	
+	temp=word;
+	if(apps==0){
+		count++;
+	}
+	if(count==1){
+		document.getElementById("hang").src="hang1.jpg";
+	}
+	else if(count==2){
+		document.getElementById("hang").src="hang2.jpg";
+	}
+	else if(count==3){
+		document.getElementById("hang").src="hang3.jpg";
+	}
+	else if(count==4){
+		document.getElementById("hang").src="hang4.jpg";
+	}
+	else if(count==5){
+		document.getElementById("hang").src="hang5.jpg";
+	}
+	else if(count==6){
+		document.getElementById("hang").src="hang6.jpg";
+	}
+	else if(count==7){
+		document.getElementById("hang").src="hang7.jpg";
+	}
+	document.getElementById("find").innerHTML =word;
+	document.getElementById("n").disabled = true;	
+}
+function funo(){
+	var save = document.getElementById("word").value;
+	var len=save.length;
+	var i,apps=0;
+	
+	word="";
+	for(i=0;i<len;i++){	
+		if(save[i]=="o"){
+			word=word.concat("o");
+			apps++;
+		}
+		else{
+			word=word.concat(temp[i]);
+		}
+	}	
+	temp=word;
+	if(apps==0){
+		count++;
+	}
+	if(count==1){
+		document.getElementById("hang").src="hang1.jpg";
+	}
+	else if(count==2){
+		document.getElementById("hang").src="hang2.jpg";
+	}
+	else if(count==3){
+		document.getElementById("hang").src="hang3.jpg";
+	}
+	else if(count==4){
+		document.getElementById("hang").src="hang4.jpg";
+	}
+	else if(count==5){
+		document.getElementById("hang").src="hang5.jpg";
+	}
+	else if(count==6){
+		document.getElementById("hang").src="hang6.jpg";
+	}
+	else if(count==7){
+		document.getElementById("hang").src="hang7.jpg";
+	}
+	document.getElementById("find").innerHTML =word;
+	document.getElementById("o").disabled = true;	
+}
+function funp(){
+	var save = document.getElementById("word").value;
+	var len=save.length;
+	var i,apps=0;
+	
+	word="";
+	for(i=0;i<len;i++){	
+		if(save[i]=="p"){
+			word=word.concat("p");
+			apps++;
+		}
+		else{
+			word=word.concat(temp[i]);
+		}
+	}	
+	temp=word;
+	if(apps==0){
+		count++;
+	}
+	if(count==1){
+		document.getElementById("hang").src="hang1.jpg";
+	}
+	else if(count==2){
+		document.getElementById("hang").src="hang2.jpg";
+	}
+	else if(count==3){
+		document.getElementById("hang").src="hang3.jpg";
+	}
+	else if(count==4){
+		document.getElementById("hang").src="hang4.jpg";
+	}
+	else if(count==5){
+		document.getElementById("hang").src="hang5.jpg";
+	}
+	else if(count==6){
+		document.getElementById("hang").src="hang6.jpg";
+	}
+	else if(count==7){
+		document.getElementById("hang").src="hang7.jpg";
+	}
+	document.getElementById("find").innerHTML =word;
+	document.getElementById("p").disabled = true;	
+}
+function funq(){
+	var save = document.getElementById("word").value;
+	var len=save.length;
+	var i,apps=0;
+	
+	word="";
+	for(i=0;i<len;i++){	
+		if(save[i]=="q"){
+			word=word.concat("q");
+			apps++;
+		}
+		else{
+			word=word.concat(temp[i]);
+		}
+	}	
+	temp=word;
+	if(apps==0){
+		count++;
+	}
+	if(count==1){
+		document.getElementById("hang").src="hang1.jpg";
+	}
+	else if(count==2){
+		document.getElementById("hang").src="hang2.jpg";
+	}
+	else if(count==3){
+		document.getElementById("hang").src="hang3.jpg";
+	}
+	else if(count==4){
+		document.getElementById("hang").src="hang4.jpg";
+	}
+	else if(count==5){
+		document.getElementById("hang").src="hang5.jpg";
+	}
+	else if(count==6){
+		document.getElementById("hang").src="hang6.jpg";
+	}
+	else if(count==7){
+		document.getElementById("hang").src="hang7.jpg";
+	}
+	document.getElementById("find").innerHTML =word;
+	document.getElementById("q").disabled = true;	
+}
+function funr(){
+	var save = document.getElementById("word").value;
+	var len=save.length;
+	var i,apps=0;
+	
+	word="";
+	for(i=0;i<len;i++){	
+		if(save[i]=="r"){
+			word=word.concat("r");
+			apps++;
+		}
+		else{
+			word=word.concat(temp[i]);
+	}	
+	}
+	temp=word;
+	if(apps==0){
+		count++;
+	}
+	if(count==1){
+		document.getElementById("hang").src="hang1.jpg";
+	}
+	else if(count==2){
+		document.getElementById("hang").src="hang2.jpg";
+	}
+	else if(count==3){
+		document.getElementById("hang").src="hang3.jpg";
+	}
+	else if(count==4){
+		document.getElementById("hang").src="hang4.jpg";
+	}
+	else if(count==5){
+		document.getElementById("hang").src="hang5.jpg";
+	}
+	else if(count==6){
+		document.getElementById("hang").src="hang6.jpg";
+	}
+	else if(count==7){
+		document.getElementById("hang").src="hang7.jpg";
+	}
+	document.getElementById("find").innerHTML =word;
+	document.getElementById("r").disabled = true;	
+}
+function funs(){
+	var save = document.getElementById("word").value;
+	var len=save.length;
+	var i,apps=0;
+	
+	word="";
+	for(i=0;i<len;i++){	
+		if(save[i]=="s"){
+			word=word.concat("s");
+			apps++;
+		}
+		else{
+			word=word.concat(temp[i]);
+		}
+	}	
+	temp=word;
+	if(apps==0){
+		count++;
+	}
+	if(count==1){
+		document.getElementById("hang").src="hang1.jpg";
+	}
+	else if(count==2){
+		document.getElementById("hang").src="hang2.jpg";
+	}
+	else if(count==3){
+		document.getElementById("hang").src="hang3.jpg";
+	}
+	else if(count==4){
+		document.getElementById("hang").src="hang4.jpg";
+	}
+	else if(count==5){
+		document.getElementById("hang").src="hang5.jpg";
+	}
+	else if(count==6){
+		document.getElementById("hang").src="hang6.jpg";
+	}
+	else if(count==7){
+		document.getElementById("hang").src="hang7.jpg";
+	}
+	document.getElementById("find").innerHTML =word;
+	document.getElementById("s").disabled = true;	
+}
+function funt(){
+	var save = document.getElementById("word").value;
+	var len=save.length;
+	var i,apps=0;
+	
+	word="";
+	for(i=0;i<len;i++){	
+		if(save[i]=="t"){
+			word=word.concat("t");
+			apps++;
+		}
+		else{
+			word=word.concat(temp[i]);
+		}
+	}	
+	temp=word;
+	if(apps==0){
+		count++;
+	}
+	if(count==1){
+		document.getElementById("hang").src="hang1.jpg";
+	}
+	else if(count==2){
+		document.getElementById("hang").src="hang2.jpg";
+	}
+	else if(count==3){
+		document.getElementById("hang").src="hang3.jpg";
+	}
+	else if(count==4){
+		document.getElementById("hang").src="hang4.jpg";
+	}
+	else if(count==5){
+		document.getElementById("hang").src="hang5.jpg";
+	}
+	else if(count==6){
+		document.getElementById("hang").src="hang6.jpg";
+	}
+	else if(count==7){
+		document.getElementById("hang").src="hang7.jpg";
+	}
+	document.getElementById("find").innerHTML =word;
+	document.getElementById("t").disabled = true;	
+}
+function funu(){
+	var save = document.getElementById("word").value;
+	var len=save.length;
+	var i,apps=0;
+	
+	word="";
+	for(i=0;i<len;i++){	
+		if(save[i]=="u"){
+			word=word.concat("u");
+			apps++;
+		}
+		else{
+			word=word.concat(temp[i]);
+		}
+	}	
+	temp=word;
+	if(apps==0){
+		count++;
+	}
+	if(count==1){
+		document.getElementById("hang").src="hang1.jpg";
+	}
+	else if(count==2){
+		document.getElementById("hang").src="hang2.jpg";
+	}
+	else if(count==3){
+		document.getElementById("hang").src="hang3.jpg";
+	}
+	else if(count==4){
+		document.getElementById("hang").src="hang4.jpg";
+	}
+	else if(count==5){
+		document.getElementById("hang").src="hang5.jpg";
+	}
+	else if(count==6){
+		document.getElementById("hang").src="hang6.jpg";
+	}
+	else if(count==7){
+		document.getElementById("hang").src="hang7.jpg";
+	}
+	document.getElementById("find").innerHTML =word;
+	document.getElementById("u").disabled = true;	
+}
+function funv(){
+	var save = document.getElementById("word").value;
+	var len=save.length;
+	var i,apps=0;
+	temp=word;
+	word="";
+	for(i=0;i<len;i++){	
+		if(save[i]=="v"){
+			word=word.concat("v");
+			apps++;
+		}
+		else{
+			word=word.concat(temp[i]);
+		}
+	}	
+	temp=word;
+	if(apps==0){
+		count++;
+	}
+	if(count==1){
+		document.getElementById("hang").src="hang1.jpg";
+	}
+	else if(count==2){
+		document.getElementById("hang").src="hang2.jpg";
+	}
+	else if(count==3){
+		document.getElementById("hang").src="hang3.jpg";
+	}
+	else if(count==4){
+		document.getElementById("hang").src="hang4.jpg";
+	}
+	else if(count==5){
+		document.getElementById("hang").src="hang5.jpg";
+	}
+	else if(count==6){
+		document.getElementById("hang").src="hang6.jpg";
+	}
+	else if(count==7){
+		document.getElementById("hang").src="hang7.jpg";
+	}
+	document.getElementById("find").innerHTML =word;
+	document.getElementById("v").disabled = true;	
+}
+function funw(){
+	var save = document.getElementById("word").value;
+	var len=save.length;
+	var i,apps=0;
+	temp=word;
+	word="";
+	for(i=0;i<len;i++){	
+		if(save[i]=="w"){
+			word=word.concat("w");
+			apps++;
+		}
+		else{
+			word=word.concat(temp[i]);
+		}
+	}	
+	temp=word;
+	if(apps==0){
+		count++;
+	}
+	if(count==1){
+		document.getElementById("hang").src="hang1.jpg";
+	}
+	else if(count==2){
+		document.getElementById("hang").src="hang2.jpg";
+	}
+	else if(count==3){
+		document.getElementById("hang").src="hang3.jpg";
+	}
+	else if(count==4){
+		document.getElementById("hang").src="hang4.jpg";
+	}
+	else if(count==5){
+		document.getElementById("hang").src="hang5.jpg";
+	}
+	else if(count==6){
+		document.getElementById("hang").src="hang6.jpg";
+	}
+	else if(count==7){
+		document.getElementById("hang").src="hang7.jpg";
+	}
+	document.getElementById("find").innerHTML =word;
+	document.getElementById("w").disabled = true;	
+}
+function funx(){
+	var save = document.getElementById("word").value;
+	var len=save.length;
+	var i,apps=0;
+	
+	word="";
+	for(i=0;i<len;i++){	
+		if(save[i]=="x"){
+			word=word.concat("x");
+			apps++;
+		}
+		else{
+			word=word.concat(temp[i]);
+		}
+	}	
+	temp=word;
+	if(apps==0){
+		count++;
+	}
+	if(count==1){
+		document.getElementById("hang").src="hang1.jpg";
+	}
+	else if(count==2){
+		document.getElementById("hang").src="hang2.jpg";
+	}
+	else if(count==3){
+		document.getElementById("hang").src="hang3.jpg";
+	}
+	else if(count==4){
+		document.getElementById("hang").src="hang4.jpg";
+	}
+	else if(count==5){
+		document.getElementById("hang").src="hang5.jpg";
+	}
+	else if(count==6){
+		document.getElementById("hang").src="hang6.jpg";
+	}
+	else if(count==7){
+		document.getElementById("hang").src="hang7.jpg";
+	}
+	document.getElementById("find").innerHTML =word;
+	document.getElementById("x").disabled = true;	
+}
+function funy(){
+	var save = document.getElementById("word").value;
+	var len=save.length;
+	var i,apps=0;
+	word="";
+	for(i=0;i<len;i++){	
+		if(save[i]=="y"){
+			word=word.concat("y");
+			apps++;
+		}
+		else{
+			word=word.concat(temp[i]);
+		}
+	}	
+	temp=word;
+	if(apps==0){
+		count++;
+	}
+	if(count==1){
+		document.getElementById("hang").src="hang1.jpg";
+	}
+	else if(count==2){
+		document.getElementById("hang").src="hang2.jpg";
+	}
+	else if(count==3){
+		document.getElementById("hang").src="hang3.jpg";
+	}
+	else if(count==4){
+		document.getElementById("hang").src="hang4.jpg";
+	}
+	else if(count==5){
+		document.getElementById("hang").src="hang5.jpg";
+	}
+	else if(count==6){
+		document.getElementById("hang").src="hang6.jpg";
+	}
+	else if(count==7){
+		document.getElementById("hang").src="hang7.jpg";
+	}
+	document.getElementById("find").innerHTML =word;
+	document.getElementById("y").disabled = true;	
+}
+function funz(){
+	var save = document.getElementById("word").value;
+	var len=save.length;
+	var i,apps=0;
+	
+	word="";
+	for(i=0;i<len;i++){	
+		if(save[i]=="z"){
+			word=word.concat("z");
+			apps++;
+		}
+		else{
+			word=word.concat(temp[i]);
+		}
+	}	
+	temp=word;
+	if(apps==0){
+		count++;
+	}
+	if(count==1){
+		document.getElementById("hang").src="hang1.jpg";
+	}
+	else if(count==2){
+		document.getElementById("hang").src="hang2.jpg";
+	}
+	else if(count==3){
+		document.getElementById("hang").src="hang3.jpg";
+	}
+	else if(count==4){
+		document.getElementById("hang").src="hang4.jpg";
+	}
+	else if(count==5){
+		document.getElementById("hang").src="hang5.jpg";
+	}
+	else if(count==6){
+		document.getElementById("hang").src="hang6.jpg";
+	}
+	else if(count==7){
+		document.getElementById("hang").src="hang7.jpg";
+	}
+	document.getElementById("find").innerHTML =word;
+	document.getElementById("z").disabled = true;	
+}
+
+</script>
+
+</body>
+</html>
